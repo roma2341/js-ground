@@ -2,8 +2,14 @@ function World(width,height) {
 	this.width = width;
 	this.height = height;
 	this.gravity = 1.25;
-	this.rain = null;
+	this.rain = new Rain();
+	this.wind = 1;
+	this.speed = 4;
 }
-function nextMoment(){
+ 
+World.prototype.nextMoment = function(){
 	this.rain.nextMoment();
+}
+World.prototype.draw = function(){
+	this.rain.draw();
 }
